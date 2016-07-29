@@ -23,8 +23,10 @@ function calculate_hash(master_key, site_name, password_length) {
 
 window.onload = function() {
     document.getElementById("hash").addEventListener("click", function () {
-    master = document.getElementById("master").value;
-    site = document.getElementById("site").value;
-    document.getElementById("hashcode").innerText = calculate_hash(master, site, 16);
-});
+        master = document.getElementById("master").value;
+        localStorage.setItem("master", master);
+        site = document.getElementById("site").value;
+        document.getElementById("hashcode").innerText = calculate_hash(master, site, 16);
+    });
+    document.getElementById("master").value = localStorage.getItem("master");
 };
