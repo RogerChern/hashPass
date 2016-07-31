@@ -11,10 +11,10 @@ function change_case(char) {
 }
 
 function calculate_hash(master_key, site_name, password_length) {
-    let hashObj = new jsSHA("SHA-512", "TEXT");
+    var hashObj = new jsSHA("SHA-512", "TEXT");
     hashObj.update(master_key+site_name);
-    let password = hashObj.getHash("HEX").slice(0, password_length);
-    let new_pass = "";
+    var password = hashObj.getHash("HEX").slice(0, password_length);
+    var new_pass = "";
     for (i = 0; i < password.length; ++i) {
         new_pass += change_case(password[i]);
     }
