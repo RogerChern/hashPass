@@ -22,9 +22,9 @@ function calculate_hash(master_key, site_name, password_length) {
 }
 
 function show_hashcode() {
-    master = document.getElementById("master").value;
+    master = document.getElementById("master").value.trim();
     localStorage.setItem("master", master);
-    site = document.getElementById("site").value;
+    site = document.getElementById("site").value.trim();
     document.getElementById("hashcode").innerText = calculate_hash(master, site, 16);
 }
 
