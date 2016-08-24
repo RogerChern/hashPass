@@ -3,8 +3,7 @@
     <head>
         <title>HashPass</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="sha512.js"></script>
-        <script src="script.js"></script>
+        <script src="scripts.min.js"></script>
         <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
@@ -25,7 +24,7 @@
                 <input id="master" type="password" class="form-control" placeholder="master key" aria-describedby="basic-addon1">
             </div>
             <br>
-            
+
             <div class="checkbox">
                 <label>
                     <input id="anonymous" type="checkbox" checked> anonymous
@@ -33,7 +32,7 @@
             </div>
 
             <button class="btn btn-primary" id="hash" type="button">Hash</button>
-            
+
 
             <h3><span class="tag tag-pill tag-info" id="hashcode"></span></h3>
         </div>
