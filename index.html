@@ -3,39 +3,59 @@
     <head>
         <title>HashPass</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="scripts.min.js"></script>
-        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+        
+
+        <!-- Material Design fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap Material Design -->
+        <link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css" rel="stylesheet">
+        <link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
     </head>
     <body>
-        <nav class="navbar navbar-static-top navbar-light bg-faded">
-                <a class="navbar-brand" href="#">HashPass</a>
-        </nav>
+        <div class="navbar navbar-default navbar-static-top bg-faded">
+            <a class="navbar-brand" href="#">HashPass</a>
+        </div>
         <br>
 
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">site name</span>
-                <input id="site" type="text" class="form-control" inputmode="verbatim" placeholder="site name" aria-describedby="basic-addon1">
-            </div>
-            <br>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">master key</span>
-                <input id="master" type="password" class="form-control" placeholder="master key" aria-describedby="basic-addon1">
-            </div>
-            <br>
-
-            <div class="checkbox">
-                <label>
-                    <input id="anonymous" type="checkbox" checked> anonymous
-                </label>
+        <div class="container col-sm-6 col-sm-offset-3">
+            <div class="form-group label-static is-empty">
+                <label for="site" class="control-label">site name</label>
+                <input id="site" type="text" class="form-control">
             </div>
 
-            <button class="btn btn-primary" id="hash" type="button">Hash</button>
+            <div class="form-group label-static is-empty" id="master-input" hidden>
+                <label for="master" class="control-label">master key</label>
+                <input id="master" type="password" class="form-control">
+            </div>
 
+            <button class="btn btn-lg btn-block btn-raised btn-primary" id="hash" type="button">Hash
+            </button>
 
-            <h3><span class="tag tag-pill tag-info" id="hashcode"></span></h3>
+            <div id="hashcode" style="text-align: center; padding: 20px"></div>
         </div>
+        
+        <!-- Script Loading Section -->
+
+        <script src="scripts.min.js"></script>
+        
+        <!-- Twitter Bootstrap -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Material Design for Bootstrap -->
+        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/material.js"></script>
+        <script src="//fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js"></script>
+        <script>
+        $.material.init();
+        </script>
 
     </body>
 </html>
