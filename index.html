@@ -3,39 +3,35 @@
     <head>
         <title>HashPass</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="scripts.min.js"></script>
-        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+        
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     </head>
     <body>
-        <nav class="navbar navbar-static-top navbar-light bg-faded">
+        <div class="navbar navbar-default navbar-static-top bg-faded">
                 <a class="navbar-brand" href="#">HashPass</a>
-        </nav>
+        </div>
         <br>
 
         <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">site name</span>
-                <input id="site" type="text" class="form-control" inputmode="verbatim" placeholder="site name" aria-describedby="basic-addon1">
+            <div class="form-group label-floating is-empty">
+                <label for="site" class="control-label">site name</label>
+                <input id="site" type="text" class="form-control">
             </div>
             <br>
 
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">master key</span>
-                <input id="master" type="password" class="form-control" placeholder="master key" aria-describedby="basic-addon1">
+                <input id="master" type="password" class="form-control" placeholder="master key" aria-describedby="basic-addon1" hidden>
             </div>
             <br>
-
-            <div class="checkbox">
-                <label>
-                    <input id="anonymous" type="checkbox" checked> anonymous
-                </label>
-            </div>
 
             <button class="btn btn-primary" id="hash" type="button">Hash</button>
 
 
             <h3><span class="tag tag-pill tag-info" id="hashcode"></span></h3>
         </div>
-
+        <script src="scripts.min.js"></script>
     </body>
 </html>

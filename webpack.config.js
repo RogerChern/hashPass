@@ -14,4 +14,9 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
+  module: {
+    loaders: [
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+    ]
+  },
 };

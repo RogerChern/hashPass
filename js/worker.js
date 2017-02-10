@@ -1,56 +1,40 @@
-var jsSHA = require('./sha512.js')
+var jsSHA = require('./sha512.js');
 
-function change_case(char) {
-    if (char >= 'a' && char <= 'z') {
-        if ((char.charCodeAt(0) - 97) % 2 === 1) {
-            return char;
-        } else {
-            return char.toUpperCase();
-        }
+function changeCase(char) {
+    if (char >= 'a' && char <= 'z' && (char.charCodeAt(0) - 97) % 2 === 0) {
+        return char.toUpperCase();
     } else {
         return char;
     }
 }
 
-function calculate_hash(master_key, site_name, password_length) {
+function calculateHash(masterKey, siteName, passwordLength) {
     var hashObj = new jsSHA("SHA-512", "TEXT");
-    hashObj.update(master_key+site_name.toLowerCase());
-    var password = hashObj.getHash("HEX").slice(0, password_length);
-    var new_pass = "";
+    hashObj.update(masterKey+siteName.toLowerCase());
+    var password = hashObj.getHash("HEX").slice(0, passwordLength);
+    var newPass = "";
     for (i = 0; i < password.length; ++i) {
-        new_pass += change_case(password[i]);
+        newPass += changeCase(password[i]);
     }
-    return new_pass;
+    return newPass;
 }
 
-function show_hashcode() {
+function showHashcode() {
     master = document.getElementById("master").value.trim();
     localStorage.setItem("master", master);
     site = document.getElementById("site").value.trim();
-    document.getElementById("hashcode").innerText = calculate_hash(master, site, 16);
-}
-
-function toggle_master_key() {
-    var masterDOM = document.getElementById("master");
-    var checked = document.getElementById("anonymous").checked;
-    if (checked) {
-        masterDOM.hidden = true;
-    } else {
-        masterDOM.hidden = false;
-    }
+    document.getElementById("hashcode").innerText = calculateHash(master, site, 16);
 }
 
 window.onload = function() {
-    document.getElementById("hash").addEventListener("click", show_hashcode);
+    document.getElementById("hash").addEventListener("click", showHashcode);
     document.getElementById("master").value = localStorage.getItem("master");
-    document.getElementById("anonymous").addEventListener("change", toggle_master_key);
-    var input_box = document.getElementById("site");
-    input_box.focus();
-    input_box.addEventListener("keypress", function(e){
+    var inputBox = document.getElementById("site");
+    inputBox.focus();
+    inputBox.addEventListener("keypress", function(e){
         var key = e.which || e.keyCode;
         if (key == 13) {
-            show_hashcode();
+            showHashcode();
         }
     });
-    toggle_master_key();
 };
