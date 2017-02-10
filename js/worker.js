@@ -20,9 +20,14 @@ function calculateHash(masterKey, siteName, passwordLength) {
 }
 
 function showHashcode() {
+    site = document.getElementById("site").value.trim();
+    if (site === "master") {
+        document.getElementById("master-input").hidden = false;
+        return;
+    }
     master = document.getElementById("master").value.trim();
     localStorage.setItem("master", master);
-    site = document.getElementById("site").value.trim();
+    
     document.getElementById("hashcode").innerText = calculateHash(master, site, 16);
 }
 
