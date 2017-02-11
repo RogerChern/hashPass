@@ -19,5 +19,7 @@
   "dependencies": {
     "clipboard": "^1.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
