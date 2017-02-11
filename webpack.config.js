@@ -1,8 +1,9 @@
-var debug = process.env.NODE_ENV !== "production";
+const debug = process.env.NODE_ENV !== "production";
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  devtool: debug ? "inline-sourcemap" : null,
+  devtool: debug ? "sourcemap" : false,
   entry: "./js/scripts.js",
   output: {
     path: __dirname,
@@ -10,7 +11,6 @@ module.exports = {
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: true, sourcemap: false }),
   ],
   module: {
