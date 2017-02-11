@@ -27,8 +27,13 @@
 
         <div class="container col-sm-6 col-sm-offset-3">
             <div class="form-group label-static is-empty">
-                <label for="site" class="control-label">site name</label>
-                <input id="site" type="text" class="form-control">
+                <div class="input-group">
+                    <label for="site" class="control-label">site name</label>
+                    <input id="site" type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-fab btn-fab-mini" id="hash"><i class="material-icons">create</i></button>
+                    </span>
+                </div>
             </div>
 
             <div class="form-group label-static is-empty" id="master-input" hidden>
@@ -36,10 +41,19 @@
                 <input id="master" type="password" class="form-control">
             </div>
 
-            <button class="btn btn-lg btn-block btn-raised btn-primary" id="hash" type="button">Hash
-            </button>
+            <div class="form-group label-static is-empty">
+                <div class="input-group">
+                    <label for="hashcode" class="control-label">password</label>
+                    <input id="hashcode" type="text" class="form-control" readonly>
+                    <span class="input-group-btn">
+                        <button class="btn btn-fab btn-fab-mini" data-clipboard-target="#hashcode"><i class="material-icons">content_copy</i></button>
+                    </span>
+                </div>
+            </div>
 
-            <div id="hashcode" class="data-clipboard-text" style="text-align: center; padding: 20px"></div>
+            <!--<button class="btn btn-lg btn-block btn-raised btn-primary" id="hash" type="button">Hash
+            </button>-->
+
         </div>
         
         <!-- Script Loading Section -->

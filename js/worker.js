@@ -1,4 +1,5 @@
 var jsSHA = require('./sha512.js');
+var Clipboard = require('clipboard');
 
 function changeCase(char) {
     if (char >= 'a' && char <= 'z' && (char.charCodeAt(0) - 97) % 2 === 0) {
@@ -28,7 +29,7 @@ function showHashcode() {
     master = document.getElementById("master").value.trim();
     localStorage.setItem("master", master);
     
-    document.getElementById("hashcode").innerText = calculateHash(master, site, 16);
+    document.getElementById("hashcode").value = calculateHash(master, site, 16);
 }
 
 window.onload = function() {
@@ -42,4 +43,5 @@ window.onload = function() {
             showHashcode();
         }
     });
+    new Clipboard('.btn');
 };
