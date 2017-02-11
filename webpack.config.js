@@ -10,7 +10,6 @@ module.exports = {
     filename: "scripts.min.js"
   },
   plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: true, sourcemap: false }),
   ],
   module: {
