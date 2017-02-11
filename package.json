@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/RogerChern/hashPass#readme",
   "dependencies": {
+    "bootstrap-material-design": "^0.5.10",
     "clipboard": "^1.6.0"
   },
   "devDependencies": {
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   }
 }
