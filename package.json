@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RogerChern/hashPass#readme",
   "dependencies": {
+    "clipboard": "^1.6.0",
     "webpack": "^1.13.2"
   }
 }
