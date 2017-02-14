@@ -43,6 +43,5 @@ window.onload = function() {
         }
     });
     inputBox.focus();
-    inputBox.click();
     new Clipboard('.btn');
 };
