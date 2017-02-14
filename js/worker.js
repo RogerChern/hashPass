@@ -36,12 +36,13 @@ window.onload = function() {
     document.getElementById("hash").addEventListener("click", showHashcode);
     document.getElementById("master").value = localStorage.getItem("master");
     var inputBox = document.getElementById("site");
-    inputBox.focus();
     inputBox.addEventListener("keypress", function(e){
         var key = e.which || e.keyCode;
         if (key == 13) {
             document.getElementById("hash").click();
         }
     });
+    inputBox.focus();
+    inputBox.click();
     new Clipboard('.btn');
 };
