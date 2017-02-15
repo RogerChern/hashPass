@@ -43,5 +43,8 @@ window.onload = function() {
         }
     });
     inputBox.focus();
+    document.getElementById("clear").addEventListener("click", function(e){
+        inputBox.value = ""; 
+    });
     new Clipboard('.btn');
 };
