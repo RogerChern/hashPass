@@ -33,18 +33,25 @@ function showHashcode() {
 }
 
 window.onload = function() {
-    document.getElementById("hash").addEventListener("click", showHashcode);
-    document.getElementById("master").value = localStorage.getItem("master");
-    var inputBox = document.getElementById("site");
-    inputBox.addEventListener("keypress", function(e){
+    var hashButton = document.getElementById("hash");
+    var masterInput = document.getElementById("master");
+    var siteInput = document.getElementById("site");
+    var clearButton = document.getElementById("clear");
+    var hashcodeInput = document.getElementById("hashcode");
+
+    masterInput.value = localStorage.getItem("master");
+    hashButton.addEventListener("click", showHashcode);
+    siteInput.addEventListener("keypress", function(e){
         var key = e.which || e.keyCode;
         if (key == 13) {
-            document.getElementById("hash").click();
+            hashButton.click();
         }
     });
-    inputBox.focus();
-    document.getElementById("clear").addEventListener("click", function(e){
-        inputBox.value = ""; 
+    siteInput.focus();
+    clearButton.addEventListener("click", function(e){
+        hashcodeInput.value = "";
+        siteInput.value = "";
+        siteInput.focus();
     });
     new Clipboard('.btn');
 };
